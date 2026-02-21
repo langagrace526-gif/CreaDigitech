@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CREA DIGITECH</title>
+
+<style>
+
+/* GENERAL */
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:#F5F5F5;
+color:#111;
+scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:50px;
+margin-right:10px;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#111;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#1E73BE;
+}
+
+/* HERO */
+.presentation{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#1E73BE,#F7931E);
+color:white;
+}
+
+.presentation h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.presentation p{
+font-size:20px;
+}
+
+/* SLIDER */
+.slider{
+width:100%;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+animation:slide 12s infinite;
+}
+
+.slides img{
+width:100%;
+height:400px;
+object-fit:cover;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+33%{transform:translateX(-100%);}
+66%{transform:translateX(-200%);}
+100%{transform:translateX(0);}
+}
+
+/* SECTIONS */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+/* BUTTONS */
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.whatsapp{background:#25D366;}
+.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf);}
+.youtube{background:#FF0000;}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+/* SIGNATURE QR */
+.signature{
+position:fixed;
+bottom:15px;
+right:15px;
+background:white;
+padding:10px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+.signature img{
+display:block;
+margin:auto;
+}
+
+.signature .qr{
+width:70px;
+}
+
+.signature .mini-logo{
+width:40px;
+margin-top:5px;
+}
+
+.signature p{
+font-size:12px;
+margin:5px 0 0;
+font-weight:bold;
+color:#1E73BE;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="IMG-20260220-WA0001.jpg" alt="Logo">
+<h2>CREA DIGITECH</h2>
+</div>
+
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#formations">Formations</a>
+<a href="#creations">Créations</a>
+<a href="#videos">Vidéos</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="presentation" id="accueil">
+<h1>Nous créons demain, pixel par pixel.</h1>
+<p>Graphiste • Programmeur • Infographe</p>
+<p>Bienvenue chez CREA DIGITECH</p>
+</section>
+
+<!-- SLIDER -->
+<div class="slider">
+<div class="slides">
+ <img src="20260207_191953.jpg" class="slide">
+    <img src="Affiche-Informatique.jpg" class="slide">
+    <img src="IMG-20250806-WA0001.jpg" class="slide">
+    <img src="IMG-20250829-WA0009.jpg" class="slide">
+    <img src="IMG-20250829-WA0011.jpg" class="slide">
+    <img src="IMG-20250830-WA0000.jpg" class="slide">
+    <img src="IMG-20250830-WA0001.jpg" class="slide">
+    <img src="IMG-20250830-WA0002.jpg" class="slide">
+    <img src="IMG-20250921-WA0001.jpg" class="slide">
+    <img src="IMG-20251011-WA0049.jpg" class="slide">
+    <img src="IMG-20251123-WA0018.jpg" class="slide">
+    <img src="IMG-20251123-WA0020.jpg" class="slide">
+    <img src="IMG-20260201-WA0004.jpg" class="slide">
+    <img src="IMG-20260220-WA0001.jpg" class="slide">
+</div>
+</div>
+
+<!-- FORMATIONS -->
+<section id="formations">
+<h2>Nos Formations</h2>
+<p>Formation en Graphisme, Développement Web, Infographie & Digital Business.</p>
+</section>
+
+<!-- CREATIONS -->
+<section id="creations">
+<h2>Nos Créations</h2>
+<p>Logos • Flyers • Sites Web • Branding • Design professionnel</p>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+<h2>Notre Chaîne YouTube</h2>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed?listType=user_uploads&list=creadigitech"
+frameborder="0" allowfullscreen>
+</iframe>
+
+<br><br>
+
+<a href="https://youtube.com/@creadigitech?si=2HE9f5RcM6RelU6H" target="_blank" class="btn youtube">
+ Voir la chaîne YouTube
+</a>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Suivez-nous</h2>
+
+<a href="https://whatsapp.com/channel/0029VbC3ZZk6mYPNIujMGX1l" target="_blank" class="btn whatsapp"> WhatsApp Channel
+</a>
+
+<a href="https://www.instagram.com/crea.digitech" target="_blank" class="btn instagram">
+ Instagram
+</a>
+
+<a href="https://youtube.com/@creadigitech?si=2HE9f5RcM6RelU6H" target="_blank" class="btn youtube">
+YouTube
+</a>
+
+</section>
+
+<footer>
+© 2026 CREA DIGITECH | Tous droits réservés
+</footer>
+
+<!-- QR + SIGNATURE -->
+<div class="signature">
+<img src="Affiche Grâce.jpg" class="qr">
+<img src="IMG-20250920-WA0008.jpg" class="mini-logo">
+<p>par Grâce LANGA</p>
+</div>
+
+</body>
+</html>
