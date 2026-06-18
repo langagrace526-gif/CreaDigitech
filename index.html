@@ -3,291 +3,460 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CREA DIGITECH</title>
+<title>CREA DIGITECH — Grâce Langa</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
+/* CSS RESET & CORE */
+*, *::before, *::after { box-sizing: border-box; }
 
-/* GENERAL */
-body{
-margin:0;
-font-family:Montserrat, sans-serif;
-background:#F5F5F5;
-color:#111;
-scroll-behavior:smooth;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A0A0C; /* Noir mat de studio, très élégant */
+    color: #E4E4E7;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 }
 
-	
-	
-	/* VERSION MOBILE */
-@media screen and (max-width:768px){
-
-header{
-flex-direction:column;
-padding:10px;
-text-align:center;
+/* TYPOGRAPHIE HAUT DE GAMME */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    color: #FFFFFF;
 }
 
-nav{
-display:flex;
-flex-direction:column;
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-nav a{
-margin:10px 0;
+/* NAVIGATION MINIMALISTE STYLE AGENCE */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(10,10,12,0.8), transparent);
+    backdrop-filter: blur(4px);
 }
 
-.logo img{
-height:40px;
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-}
-	
-	
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
+.nav-logo img {
+    height: 32px;
+    width: auto;
 }
 
-.logo{
-display:flex;
-align-items:center;
+.nav-logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
 }
 
-.logo img{
-height:50px;
-margin-right:10px;
+nav {
+    display: flex;
+    gap: 40px;
 }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#111;
-font-weight:500;
-transition:0.3s;
+nav a {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    color: #A1A1AA;
 }
 
-nav a:hover{
-color:#1E73BE;
+nav a:hover, nav a.active {
+    color: #1E73BE; /* Ton bleu officiel, subtil sur le lien actif */
 }
 
-/* HERO */
-.presentation{
-text-align:center;
-padding:80px 20px;
-background:linear-gradient(135deg,#1E73BE,#F7931E);
-color:white;
+/* GRID DE PRÉSENTATION ASYMÉTRIQUE (HERO + ABOUT ACCUMULÉS) */
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 180px 8% 100px 8%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
 }
 
-.presentation h1{
-font-size:42px;
-margin-bottom:10px;
+.hero-statement h1 {
+    font-size: 4.5rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
 }
 
-.presentation p{
-font-size:20px;
+.hero-statement h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
-/* SLIDER */
-.slider{
-width:100%;
-overflow:hidden;
+.hero-meta {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    border-top: 1px solid #1F1F23;
+    padding-top: 25px;
 }
 
-.slides{
-display:flex;
-animation:slide 12s infinite;
+.meta-item {
+    font-size: 0.85rem;
+    color: #71717A;
 }
 
-.slides img{
-width:100%;
-height:400px;
-object-fit:cover;
+.meta-item strong {
+    display: block;
+    color: #F28C28; /* Ton Orange pour les détails importants */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
-@keyframes slide{
-0%{transform:translateX(0);}
-33%{transform:translateX(-100%);}
-66%{transform:translateX(-200%);}
-100%{transform:translateX(0);}
+/* L'INTÉGRATION PHOTO STYLE ART/DESIGNER */
+.photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
 }
 
-/* SECTIONS */
-section{
-padding:60px 20px;
-text-align:center;
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #18181B; /* Fond neutre en attendant ta photo */
 }
 
-/* BUTTONS */
-.btn{
-display:inline-block;
-margin:10px;
-padding:12px 25px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(110%); /* Effet noir et blanc artistique très "studio" */
+    transition: filter 0.5s ease;
 }
 
-.btn:hover{
-transform:scale(1.05);
+.photo-wrapper:hover img {
+    filter: grayscale(0%) contrast(100%); /* Repasse en couleur proprement au survol */
 }
 
-.whatsapp{background:#25D366;}
-.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf);}
-.youtube{background:#FF0000;}
-
-/* FOOTER */
-footer{
-background:#111;
-color:white;
-padding:30px;
-text-align:center;
+/* Filigrane géométrique en arrière-plan qui rappelle le circuit de ton logo */
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid rgba(30, 115, 190, 0.2);
+    border-bottom: 1px solid rgba(30, 115, 190, 0.2);
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* SIGNATURE QR */
-.signature{
-position:fixed;
-bottom:15px;
-right:15px;
-background:white;
-padding:10px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-text-align:center;
+/* SECTION PORTFOLIO STRUCTURÉE (BENTO GRID) */
+section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 8%;
+    border-top: 1px solid #1F1F23;
 }
 
-.signature img{
-display:block;
-margin:auto;
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
 }
 
-.signature .qr{
-width:70px;
+.section-header h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
-.signature .mini-logo{
-width:40px;
-margin-top:5px;
+.section-header .index {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #71717A;
+    letter-spacing: 0.2em;
 }
 
-.signature p{
-font-size:12px;
-margin:5px 0 0;
-font-weight:bold;
-color:#1E73BE;
+/* La Grille Asymétrique */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
 }
 
+.bento-item {
+    background: #121215;
+    border: 1px solid #1F1F23;
+    padding: 40px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-item:hover {
+    border-color: rgba(242, 140, 40, 0.4); /* Highlight subtil orange sans effet néon lourd */
+    background: #151519;
+}
+
+/* Architecture de tailles différentes pour casser la monotonie */
+.size-large { grid-column: span 4; }
+.size-medium { grid-column: span 2; }
+.size-full { grid-column: span 6; min-height: 450px; }
+
+.bento-item .category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #71717A;
+}
+
+.bento-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.bento-item p {
+    color: #A1A1AA;
+    font-size: 0.9rem;
+    margin: 0;
+    max-width: 480px;
+}
+
+/* BOUTONS TEXTUELS ÉLÉGANTS */
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.text-link::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.bento-item:hover .text-link::after {
+    transform: translateX(5px);
+}
+
+/* L'INTÉGRATION DU LECTEUR VIDÉO SENIOR */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #121215;
+    border: 1px solid #1F1F23;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.video-container:hover iframe {
+    opacity: 1;
+}
+
+/* FLOATING WIDGET SIGNATURE REVISITÉ */
+.minimal-signature {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(18, 18, 21, 0.6);
+    border: 1px solid #1F1F23;
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    z-index: 999;
+}
+
+.minimal-signature .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #25D366; /* Vert "disponible" discret */
+    border-radius: 50%;
+}
+
+.minimal-signature span {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #A1A1AA;
+}
+
+/* RESPONSIVE STRUCTURE */
+@media (max-width: 1024px) {
+    .hero-container { grid-template-columns: 1fr; gap: 40px; padding-top: 140px; }
+    .photo-frame { justify-self: center; }
+    .hero-statement h1 { font-size: 3rem; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .size-large, .size-medium, .size-full { grid-column: span 1; }
+    header { padding: 20px 5%; }
+    nav { display: none; } /* En agence, on passe sur un menu épuré sur mobile */
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">
-<img src="IMG-20260220-WA0001.jpg" alt="Logo">
-<h2>CREA DIGITECH</h2>
-</div>
-
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#formations">Formations</a>
-<a href="#creations">Créations</a>
-<a href="#videos">Vidéos</a>
-<a href="#contact">Contact</a>
-</nav>
+    <div class="nav-logo">
+        <img src="logo.png" alt="Crea Digitech Logo">
+        <span>CREA DIGITECH</span>
+    </div>
+    <nav>
+        <a href="#accueil" class="active">Index</a>
+        <a href="#projets">Travaux</a>
+        <a href="#formations">Formations</a>
+        <a href="#studio">Studio</a>
+    </nav>
 </header>
 
-<!-- HERO -->
-<section class="presentation" id="accueil">
-<h1>Nous créons demain, pixel par pixel.</h1>
-<p>Graphiste • Programmeur • Infographe</p>
-<p>Bienvenue chez CREA DIGITECH</p>
+<main class="hero-container" id="accueil">
+    <div class="hero-statement">
+        <h1>Nous créons<br>demain, <span>pixel</span><br>par pixel.</h1>
+        
+        <div class="hero-meta">
+            <div class="meta-item">
+                <strong>Direction Artistique</strong>
+                Grâce Langa — Fondateur
+            </div>
+            <div class="meta-item">
+                <strong>Localisation</strong>
+                Kinshasa, DR Congo
+            </div>
+            <div class="meta-item">
+                <strong>Services</strong>
+                Design, Code, Branding
+            </div>
+        </div>
+    </div>
+
+    <div class="photo-frame">
+        <div class="photo-wrapper">
+            <img src="Moi.jpg" alt="Grâce Langa" onerror="this.style.display='none';">
+        </div>
+    </div>
+</main>
+
+<section id="projets">
+    <div class="section-header">
+        <h2>Sélection de travaux</h2>
+        <span class="index">01 / 03</span>
+    </div>
+
+    <div class="bento-grid">
+        <div class="bento-item size-large">
+            <div>
+                <span class="category">Identité Visuelle & Design</span>
+                <h3>Branding & Chartes Graphiques</h3>
+                <p>Création de systèmes visuels cohérents. Du logotype sur-mesure aux supports de communication physiques et numériques de pointe.</p>
+            </div>
+            <a href="#contact" class="text-link">Voir l'approche</a>
+        </div>
+
+        <div class="bento-item size-medium">
+            <div>
+                <span class="category">Ingénierie Web</span>
+                <h3>Développement</h3>
+                <p>Code propre, rapide et optimisé pour le référencement naturel Google.</p>
+            </div>
+            <a href="#contact" class="text-link">Spécifications</a>
+        </div>
+
+        <div class="bento-item size-full">
+            <div>
+                <span class="category">Contenu & Transmission</span>
+                <h3>Production Vidéo & Formations Digitaux</h3>
+                <p>Vulgarisation des concepts UI/UX et apprentissage pratique des métiers du web à travers la chaîne CREA DIGITECH.</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=creadigitech" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SLIDER -->
-<div class="slider">
-<div class="slides">
- <img src="20260207_191953.jpg" class="slide">
-    <img src="Affiche-Informatique.jpg" class="slide">
-    <img src="IMG-20250806-WA0001.jpg" class="slide">
-    <img src="IMG-20250829-WA0009.jpg" class="slide">
-    <img src="IMG-20250829-WA0011.jpg" class="slide">
-    <img src="IMG-20250830-WA0000.jpg" class="slide">
-    <img src="IMG-20250830-WA0001.jpg" class="slide">
-    <img src="IMG-20250830-WA0002.jpg" class="slide">
-    <img src="IMG-20250921-WA0001.jpg" class="slide">
-    <img src="IMG-20251011-WA0049.jpg" class="slide">
-    <img src="IMG-20251123-WA0018.jpg" class="slide">
-    <img src="IMG-20251123-WA0020.jpg" class="slide">
-    <img src="IMG-20260201-WA0004.jpg" class="slide">
-    <img src="IMG-20260220-WA0001.jpg" class="slide">
-</div>
-</div>
+<section id="studio" style="background-color: #08080A;">
+    <div class="section-header">
+        <h2>Connexions</h2>
+        <span class="index">02 / 03</span>
+    </div>
 
-<!-- FORMATIONS -->
-<section id="formations">
-<h2>Nos Formations</h2>
-<p>Formation en Graphisme, Développement Web, Infographie & Digital Business.</p>
+    <div class="bento-grid">
+        <div class="bento-item size-medium" style="min-height: 200px;">
+            <div>
+                <span class="category">Direct</span>
+                <h3>WhatsApp</h3>
+            </div>
+            <a href="https://whatsapp.com/channel/0029VbC3ZZk6mYPNIujMGX1l" target="_blank" class="text-link">Rejoindre le canal</a>
+        </div>
+
+        <div class="bento-item size-medium" style="min-height: 200px;">
+            <div>
+                <span class="category">Social</span>
+                <h3>Instagram</h3>
+            </div>
+            <a href="https://www.instagram.com/crea.digitech" target="_blank" class="text-link">Suivre le studio</a>
+        </div>
+
+        <div class="bento-item size-medium" style="min-height: 200px;">
+            <div>
+                <span class="category">Communauté</span>
+                <h3>YouTube</h3>
+            </div>
+            <a href="https://youtube.com/@creadigitech" target="_blank" class="text-link">S'abonner</a>
+        </div>
+    </div>
 </section>
 
-<!-- CREATIONS -->
-<section id="creations">
-<h2>Nos Créations</h2>
-<p>Logos • Flyers • Sites Web • Branding • Design professionnel</p>
-</section>
-
-<!-- VIDEOS -->
-<section id="videos">
-<h2>Notre Chaîne YouTube</h2>
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed?listType=user_uploads&list=creadigitech"
-frameborder="0" allowfullscreen>
-</iframe>
-
-<br><br>
-
-<a href="https://youtube.com/@creadigitech?si=2HE9f5RcM6RelU6H" target="_blank" class="btn youtube">
- Voir la chaîne YouTube
-</a>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Suivez-nous</h2>
-
-<a href="https://whatsapp.com/channel/0029VbC3ZZk6mYPNIujMGX1l" target="_blank" class="btn whatsapp"> WhatsApp Channel
-</a>
-
-<a href="https://www.instagram.com/crea.digitech" target="_blank" class="btn instagram">
- Instagram
-</a>
-
-<a href="https://youtube.com/@creadigitech?si=2HE9f5RcM6RelU6H" target="_blank" class="btn youtube">
-YouTube
-</a>
-
-</section>
-
-<footer>
-© 2026 CREA DIGITECH | Tous droits réservés
-</footer>
-
-<!-- QR + SIGNATURE -->
-<div class="signature">
-<img src="Affiche Grâce.jpg" class="qr">
-<img src="IMG-20250920-WA0008.jpg" class="mini-logo">
-<p>par Grâce LANGA</p>
+<div class="minimal-signature">
+    <div class="dot"></div>
+    <span>Portfolio par Grâce Langa</span>
 </div>
 
 </body>
